@@ -64,6 +64,9 @@ function generatePassword(){ // when I click the red button
 
   let basketCorrectLength = newBasket.splice(0,inputData); // after shuffling the array lets cut the array into size using splice
 
+  let p = []; // assigning a new variable to an empty array
+  p.push(basketCorrectLength); // appending basketCorrectLength to new variable
+  return p;
 }
 
   // Write password to the #password input
