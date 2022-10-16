@@ -51,6 +51,13 @@ function generatePassword(){ // when I click the red button
     basket.push(upperList); //I choose lowerList
   }
 
+  let newBasket = []; // storing the values of the iterated array into a new variable called newBasket
+  for(let i =0; i<basket.length; i++){ //cycling through the nested basket array, to make it one big array 
+    for(let j=0; j<basket[i].length; j++){
+      newBasket.push(basket[i][j]);
+    }
+  }
+
 }
 
   // Write password to the #password input
