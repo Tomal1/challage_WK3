@@ -16,6 +16,18 @@ function generatePassword(){ // when I click the red button
   let wantsLower = window.confirm("do you want lower case characters?");  
   let wantsUpper = window.confirm("do you want upper case characters?");
 
+  let numberList = []; //an empty array stored inside "numberList" variable"
+  for (let i = 0; i < 10; i++){ 
+    numberList.push(i); //a for loop pushing integers into an numberList from 0-9
+  }
+
+  let specialList = ["!", "@", "#", "£", "$", "%", "^", "&", "*"]; //an array containing special characters
+  let lowerList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];//an array containing letters from a-z
+
+  let upperList = [];// same array pushed into another variable which capitalises all letters
+  for (let i = 0; i<lowerList.length; i++ ){
+    upperList.push(lowerList[i].toUpperCase());
+  }
 
 }
 
