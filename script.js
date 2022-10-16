@@ -58,6 +58,10 @@ function generatePassword(){ // when I click the red button
     }
   }
 
+  for(let i =0; i < newBasket.length; i++){ //shuffling the array with Fisher-Yates Shuffle Algorithm (please visit: https://www.youtube.com/watch?v=NfekYmg4vCE)
+    newBasket[i] = newBasket[Math.floor(Math.random() * newBasket.length)];
+  }
+
 }
 
   // Write password to the #password input
