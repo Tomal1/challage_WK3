@@ -9,6 +9,12 @@ function generatePassword(){ // when I click the red button
     return // will be returned to to the top of the function
   }
 
+  /*confirm is a type of alert which only takes: true(ok) or false(cancel), so 4 confirm alerts will
+  appear in a series asking us to refine the password criteria.*/
+  let wantsNumber = window.confirm("do you want numbers in the password?");
+  let wantsSpecial = window.confirm("do you want special characters in the password?");
+  let wantsLower = window.confirm("do you want lower case characters?");  
+  let wantsUpper = window.confirm("do you want upper case characters?");
 
 
 }
