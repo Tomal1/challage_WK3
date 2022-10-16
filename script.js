@@ -29,6 +29,28 @@ function generatePassword(){ // when I click the red button
     upperList.push(lowerList[i].toUpperCase());
   }
 
+  let basket = []; // an empty array which will act as a container to store all the selected criteria (truthy values) from the confirm alerts
+   
+  if(wantsNumber){ // when the confirm alert arises requesting numbers, if the user clicks ok (true);
+    basket.push(numberList);// push all numbers from "numberList" array into the empty array "basket"
+  }
+
+  if(wantsSpecial === true){// when the confirm alert arises requesting special characters, if the user clicks ok (true);
+    basket.push(specialList);// push all special characters from "specialList" array into the empty array "basket"
+  }
+
+  if(wantsLower === true){// when the confirm alert arises requesting lower case characters, if the user clicks ok (true);
+    basket.push(lowerList);// push all lower case characters from "lowerList" array into the empty array "basket"
+  }
+
+  if(wantsUpper === true){// when the confirm alert arises requesting upper case characters, if the user clicks ok (true);
+    basket.push(upperList);// push all upper case characters from "upperList" array into the empty array "basket"
+  }
+
+  if(basket.length === 0){//if all the confirm alerts have a false values (cancel for all of them), at leasts one character type should be selected
+    basket.push(upperList); //I choose lowerList
+  }
+
 }
 
   // Write password to the #password input
