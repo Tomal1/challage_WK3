@@ -70,9 +70,7 @@ function generatePassword(){ // when I click the red button
     basketCorrectLength.push(newBasket[Math.floor(Math.random() * newBasket.length)]);
   }
 
-  let p = []; // assigning a new variable to an empty array
-  p.push(basketCorrectLength); // appending basketCorrectLength to new variable
-  return p;
+  return basketCorrectLength.join(""); //returning basketCorrectLength directly and joining it to get rid of commas.
 }
 
   // Write password to the #password input
