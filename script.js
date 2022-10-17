@@ -1,3 +1,5 @@
+var generateBtn = document.querySelector("#generate"); //hooking up the button through DOM
+
 function generatePassword(){ // when I click the red button
   let inputData = parseInt(window.prompt("how many characters do you want password to be?")); //an prompt requesting an input of an integer "parseInt" which will be stored inside a variable called "inputData"
 
@@ -30,39 +32,43 @@ function generatePassword(){ // when I click the red button
   }
 
   let basket = []; // an empty array which will act as a container to store all the selected criteria (truthy values) from the confirm alerts
-   
+  
   if(wantsNumber){ // when the confirm alert arises requesting numbers, if the user clicks ok (true);
     basket.push(numberList);// push all numbers from "numberList" array into the empty array "basket"
   }
 
-  if(wantsSpecial === true){// when the confirm alert arises requesting special characters, if the user clicks ok (true);
+  if(wantsSpecial){// when the confirm alert arises requesting special characters, if the user clicks ok (true);
     basket.push(specialList);// push all special characters from "specialList" array into the empty array "basket"
   }
 
-  if(wantsLower === true){// when the confirm alert arises requesting lower case characters, if the user clicks ok (true);
+  if(wantsLower){// when the confirm alert arises requesting lower case characters, if the user clicks ok (true);
     basket.push(lowerList);// push all lower case characters from "lowerList" array into the empty array "basket"
   }
 
-  if(wantsUpper === true){// when the confirm alert arises requesting upper case characters, if the user clicks ok (true);
+  if(wantsUpper){// when the confirm alert arises requesting upper case characters, if the user clicks ok (true);
     basket.push(upperList);// push all upper case characters from "upperList" array into the empty array "basket"
   }
 
   if(basket.length === 0){//if all the confirm alerts have a false values (cancel for all of them), at leasts one character type should be selected
-    basket.push(upperList); //I choose lowerList
+    basket.push(upperList); //I choose upperList
   }
 
   let newBasket = []; // storing the values of the iterated array into a new variable called newBasket
-  for(let i =0; i<basket.length; i++){ //cycling through the nested basket array, to make it one big array 
+  for(let i =0; i<basket.length; i++){ //cycling through the nested basket array, to make it one massive array 
     for(let j=0; j<basket[i].length; j++){
       newBasket.push(basket[i][j]);
     }
   }
 
-  for(let i =0; i < newBasket.length; i++){ //shuffling the array with Fisher-Yates Shuffle Algorithm (please visit: https://www.youtube.com/watch?v=NfekYmg4vCE)
+  for(let i = 0; i < newBasket.length; i++){ //shuffling the array with Fisher-Yates Shuffle Algorithm (please visit: https://www.youtube.com/watch?v=NfekYmg4vCE)
     newBasket[i] = newBasket[Math.floor(Math.random() * newBasket.length)];
   }
 
-  let basketCorrectLength = newBasket.splice(0,inputData); // after shuffling the array lets cut the array into size using splice
+  let basketCorrectLength = [];
+
+  for(let i = 0; i < inputData; i++){ // the previous slice method replaced with for loop because it did not populate above 71 charterers
+    basketCorrectLength.push(newBasket[Math.floor(Math.random() * newBasket.length)]);
+  }
 
   let p = []; // assigning a new variable to an empty array
   p.push(basketCorrectLength); // appending basketCorrectLength to new variable
@@ -75,7 +81,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
