@@ -13,6 +13,8 @@ gitHub repo URL: https://github.com/Tomal1/challage_WK3/settings/pages
 
 When the user clicks on the red "Generate Password" button, a series of prompts are displayed, firstly asking for the quantity of characters the password should contain, what character types should the password include and finally the password is generated.
 
+
+
 ![alt text](/Assets/images/password.png)
 
 ## Credits
